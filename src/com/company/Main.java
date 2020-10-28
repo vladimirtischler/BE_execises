@@ -7,24 +7,17 @@ import java.util.List;
 
 public class Main {
 
-    public static ArrayList<Integer> numbers = new ArrayList<Integer>();
+    public static List<Integer> numbers = new ArrayList<Integer>();
 
     public static void main(String[] args) {
         //1.exercise
-        numbers.add(1);
-        numbers.add(1);
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        numbers.add(5);
+        numbers.addAll(Arrays.asList(1,1,1,2,2,3,4,5));
 
         Thread numbers = new Thread(Main::numbers3);
         numbers.start();
 
         //2.exercise
-        addIfNotExist(5);
+        addIfNotExist(10);
     }
     public static List<Integer> numbers3(){
         numbers.stream().forEach(y->System.out.print(y));
