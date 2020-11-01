@@ -28,6 +28,7 @@ public class Main {
 
         //4.exercise
         evenNumbers();
+        System.out.println();
 
     }
     public static void numbers3(){
