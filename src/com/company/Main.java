@@ -1,6 +1,6 @@
 package com.company;
 
-import java.io.Console;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +8,8 @@ import java.util.List;
 public class Main {
 
     public static List<Integer> numbers = new ArrayList();
+    public static List<Integer> unevenNumbers = new ArrayList();
+    public static List<Integer> evenNumbers = new ArrayList();
 
     public static void main(String[] args) {
         //1.exercise
@@ -18,8 +20,14 @@ public class Main {
 
         //2.exercise
         addIfNotExist(78);
+        System.out.println();
 
         //3.exercise
+        deleteEvenNumbers();
+        System.out.println();
+
+        //4.exercise
+        evenNumbers();
 
     }
     public static void numbers3(){
@@ -33,4 +41,23 @@ public class Main {
             numbers.stream().forEach(System.out::print);
         }
     }
+
+    public static void deleteEvenNumbers() {
+        for (var y : numbers) {
+            if (y % 2 != 0) {
+                unevenNumbers.add(y);
+            }
+        }
+        unevenNumbers.stream().forEach(System.out::print);
+    }
+
+    public static void evenNumbers(){
+        for (var i : numbers){
+            if (i%2==0){
+                evenNumbers.add(i);
+            }
+        }
+        evenNumbers.stream().forEach(System.out::print);
+    }
+
 }
