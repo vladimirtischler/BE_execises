@@ -55,7 +55,7 @@ public class Main {
     //5.exercise
     public static void multiplyByLenght(){
         List <Integer>numbers = new ArrayList<>();
-        numbers.addAll(Arrays.asList(5,4,7,2,4));
+        numbers.addAll(Arrays.asList(5,4,7,2,3));
         numbers.stream().map(y->y*numbers.size()).forEach(System.out::print);
     }
 
