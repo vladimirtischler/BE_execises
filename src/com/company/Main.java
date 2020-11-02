@@ -8,8 +8,6 @@ import java.util.List;
 public class Main {
 
     public static List<Integer> numbers = new ArrayList();
-    public static List<Integer> unevenNumbers = new ArrayList();
-    public static List<Integer> evenNumbers = new ArrayList();
 
     public static void main(String[] args) {
         //1.exercise
@@ -30,6 +28,10 @@ public class Main {
         evenNumbers();
         System.out.println();
 
+        //5.exercise
+        multiplyByLenght();
+        //6.Exercise
+
     }
     public static void numbers3(){
         numbers.stream().forEach(System.out::print);
@@ -44,21 +46,19 @@ public class Main {
     }
 
     public static void deleteEvenNumbers() {
-        for (var y : numbers) {
-            if (y % 2 != 0) {
-                unevenNumbers.add(y);
-            }
-        }
-        unevenNumbers.stream().forEach(System.out::print);
+        numbers.stream().filter(y -> y%2!=0).forEach(System.out::print);
+    }
+    //4.exercise
+    public static void evenNumbers(){
+            numbers.stream().filter(y -> y%2==0).forEach(System.out::print);
+    }
+    //5.exercise
+    public static void multiplyByLenght(){
+        List <Integer>numbers = new ArrayList<>();
+        numbers.addAll(Arrays.asList(5,4,7,2,4));
+        numbers.stream().map(y->y*numbers.size()).forEach(System.out::print);
     }
 
-    public static void evenNumbers(){
-        for (var i : numbers){
-            if (i%2==0){
-                evenNumbers.add(i);
-            }
-        }
-        evenNumbers.stream().forEach(System.out::print);
-    }
+    //6.exercise
 
 }
