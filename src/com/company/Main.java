@@ -87,7 +87,7 @@ public class Main {
 
     //7.exercise
     public static boolean containInNameCharA(Person[] people){
-        boolean b = Arrays.stream(people).map(Person::getName).anyMatch(y->y.contains("a"));
-        return b;
+        boolean a = Arrays.stream(people).map(Person::getName).anyMatch(y->y.contains("a"));
+        return a;
     }
 }
