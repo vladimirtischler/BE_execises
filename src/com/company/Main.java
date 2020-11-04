@@ -1,14 +1,13 @@
 package com.company;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
     public static List<Integer> numbers = new ArrayList<>();
     public static List<Integer> numbers1 = new ArrayList<>();
+    public static Set<Integer> hashSet = new HashSet<>();
+    public static HashMap<String,Integer> hashMap = new HashMap<>();
 
     public static void main(String[] args) {
         //1.exercise
@@ -43,51 +42,71 @@ public class Main {
         //7.exercise
         System.out.println(containInNameCharA(new Person[]{person1,person2,person3}));
 
+        //8.exercise
+        hashSet.addAll(numbers);
+        hashSet.add(1);
+        hashSet.forEach(System.out::print);
+        System.out.println();
+
+        //9.exercise
+        hashMap.put("Red", 1);
+        hashMap.put("Green",2);
+        hashMap.put("Black",3);
+        hashMap.put("White",4);
+        System.out.println(hashMap);
+
+        //10.exercise
+        createNewElement();
+
     }
 
     //1.exercise
-    public static List<Integer> numbers3(){
-        numbers.stream().forEach(System.out::print);
-        return numbers;
+    public static void numbers3(){
+        numbers.forEach(System.out::print);
     }
 
     //2.exercise
-    public static List<Integer> addIfNotExist(int number) {
+    public static void addIfNotExist(int number) {
         if (!numbers.contains(number))
         {
             numbers.add(number);;
-            numbers.stream().forEach(System.out::print);
+            numbers.forEach(System.out::print);
         }
-        return numbers;
     }
 
     //3.exercise
-    public static List<Integer> deleteEvenNumbers() {
+    public static void deleteEvenNumbers() {
         numbers.stream().filter(y -> y%2!=0).forEach(System.out::print);
-        return numbers;
     }
 
     //4.exercise
-    public static List<Integer> evenNumbers(){
+    public static void evenNumbers(){
         numbers.stream().filter(y -> y%2==0).forEach(System.out::print);
-        return numbers;
     }
 
     //5.exercise
-    public static List<Integer> multiplyByLenght(){
+    public static void multiplyByLenght(){
         numbers1.stream().map(y->y*numbers1.size()).forEach(System.out::print);
-        return numbers1;
     }
 
     //6.exercise
     public static int totalBudget(Person[] people){
-        int totalBudget = Arrays.stream(people).map(Person::getBudget).reduce(0, Integer::sum);
-        return totalBudget;
+       return Arrays.stream(people).map(Person::getBudget).reduce(0, Integer::sum);
     }
 
     //7.exercise
     public static boolean containInNameCharA(Person[] people){
-        boolean a = Arrays.stream(people).map(Person::getName).anyMatch(y->y.contains("a"));
-        return a;
+        return Arrays.stream(people).map(Person::getName).anyMatch(y->y.contains("a"));
     }
+
+    //10.exercise
+    public static void createNewElement(){
+        HashMap<String,Integer> element = new HashMap();
+        element.put("Red",5);
+        if(!hashMap.containsValue(element)&!hashMap.containsKey(element)){
+            hashMap.putAll(element);
+        }
+        System.out.print(hashMap);
+    }
+
 }
