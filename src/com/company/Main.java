@@ -56,7 +56,7 @@ public class Main {
         System.out.println(hashMap);
 
         //10.exercise
-        createNewElement();
+        createNewElement("Blue",4);
 
     }
 
@@ -100,11 +100,9 @@ public class Main {
     }
 
     //10.exercise
-    public static void createNewElement(){
-        HashMap<String,Integer> element = new HashMap();
-        element.put("Red",5);
-        if(!hashMap.containsValue(element)&!hashMap.containsKey(element)){
-            hashMap.putAll(element);
+    public static void createNewElement(String a,Integer b){
+        if(!hashMap.containsValue(b)&&!hashMap.containsKey(a)){
+            hashMap.put(a,b);
         }
         System.out.print(hashMap);
     }
