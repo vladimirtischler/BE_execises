@@ -101,9 +101,10 @@ public class Main {
 
     //10.exercise
     public static void createNewElement(String a,Integer b){
-        if(!hashMap.containsValue(b)&&!hashMap.containsKey(a)){
-            hashMap.put(a,b);
-        }
+        //if(!hashMap.containsValue(b)&&!hashMap.containsKey(a)){
+        //    hashMap.put(a,b);
+        //}
+        hashMap.putIfAbsent(a, b);
         System.out.print(hashMap);
     }
 
